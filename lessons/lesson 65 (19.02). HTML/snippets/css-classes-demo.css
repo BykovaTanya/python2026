@@ -1,0 +1,599 @@
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* === ОДИНОЧНЫЕ КЛАССЫ === */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header-main {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.title-large {
+    font-size: 2.5rem;
+}
+
+.subtitle {
+    opacity: 0.9;
+    font-size: 1.1rem;
+}
+
+.main-content {
+    display: grid;
+    gap: 30px;
+}
+
+.section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section-dark {
+    background: #2c3e50;
+    color: white;
+}
+
+.heading {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.heading-center {
+    text-align: center;
+}
+
+.text {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.text-large {
+    font-size: 1.2rem;
+}
+
+.box {
+    background: #ecf0f1;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 15px 0;
+    border-left: 4px solid #3498db;
+}
+
+.box-primary {
+    background: #e8f4fd;
+    border-left-color: #3498db;
+}
+
+.box-shadow {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-large {
+    padding: 16px 32px;
+    font-size: 1.2rem;
+}
+
+.btn-success {
+    background: #379c62;
+}
+
+.btn-success:hover {
+    background: #229954;
+}
+
+/* === BEM МЕТОДОЛОГИЯ === */
+.card-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card-section__title {
+    grid-column: 1 / -1;
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card--featured {
+    border: 2px solid #f39c12;
+    background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+}
+
+.card__header {
+    background: #f8f9fa;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card__title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.card__badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.card__badge--new {
+    background: #27ae60;
+    color: white;
+}
+
+.card__badge--featured {
+    background: #f39c12;
+    color: white;
+}
+
+.card__body {
+    padding: 20px;
+}
+
+.card__text {
+    color: #555;
+    line-height: 1.6;
+}
+
+.card__footer {
+    padding: 20px;
+    background: #f8f9fa;
+    text-align: right;
+}
+
+.card__btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.card__btn:hover {
+    background: #2980b9;
+}
+
+.card__btn--primary {
+    background: #3498db;
+}
+
+.card__btn--secondary {
+    background: #95a5a6;
+}
+
+.card__btn--secondary:hover {
+    background: #7f8c8d;
+}
+
+/* === КОМБИНИРОВАННЫЕ СЕЛЕКТОРЫ === */
+.combo-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.combo-section__heading {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Потомок (пробел) */
+.parent .child {
+    background: #e8f4fd;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 3px solid #3498db;
+}
+
+/* Дочерний элемент (>) */
+.parent-direct > .child-direct {
+    background: #d5f4e6;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 3px solid #27ae60;
+}
+
+/* Соседний элемент (+) */
+.sibling-first + .sibling-second {
+    background: #fef9e7;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 3px solid #f39c12;
+}
+
+/* Все последующие элементы (~) */
+.general-sibling ~ .following {
+    background: #fadbd8;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border-left: 3px solid #e74c3c;
+}
+
+/* === ПСЕВДОКЛАССЫ И ПСЕВДОЭЛЕМЕНТЫ === */
+.pseudo-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.pseudo-section__title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.states-demo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.btn-state {
+    background: #9b59b6;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-state:hover {
+    background: #8e44ad;
+    transform: scale(1.05);
+}
+
+.btn-state:active {
+    transform: scale(0.95);
+}
+
+.link-state {
+    color: #3498db;
+    text-decoration: none;
+    padding: 10px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.link-state:hover {
+    background: #3498db;
+    color: white;
+}
+
+.link-state:visited {
+    color: #8e44ad;
+    border-color: #8e44ad;
+}
+
+.input-state {
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.input-state:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.pseudo-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.quote {
+    position: relative;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 5px;
+    font-style: italic;
+    margin: 20px 0;
+}
+
+.quote::before {
+    content: "\"";
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 3rem;
+    color: #3498db;
+}
+
+.quote::after {
+    content: "\"";
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    font-size: 3rem;
+    color: #3498db;
+}
+
+.first-letter::first-letter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e74c3c;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+.first-line::first-line {
+    color: #27ae60;
+    font-weight: bold;
+}
+
+/* === УТИЛИТАРНЫЕ КЛАССЫ === */
+.utilities-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.utilities-section__heading {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.text-center {
+    text-align: center;
+    background: #ecf0f1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.text-right {
+    text-align: right;
+    background: #ecf0f1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.text-bold {
+    font-weight: bold;
+    background: #ecf0f1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.text-italic {
+    font-style: italic;
+    background: #ecf0f1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.bg-primary {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.bg-secondary {
+    background-color: #95a5a6;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+.padding-large {
+    padding: 30px;
+    background: #ecf0f1;
+    margin: 5px 0;
+}
+
+.margin-small {
+    margin: 20px;
+    background: #ecf0f1;
+}
+
+.border-radius {
+    border-radius: 10px;
+    background: #ecf0f1;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+/* === КЛАССЫ ДЛЯ СОСТОЯНИЙ === */
+.state-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.state-section__title {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border-left: 4px solid;
+}
+
+.alert-success {
+    background: #d5f4e6;
+    border-left-color: #27ae60;
+    color: #145a32;
+}
+
+.alert-warning {
+    background: #fef9e7;
+    border-left-color: #f39c12;
+    color: #7e5109;
+}
+
+.alert-error {
+    background: #fadbd8;
+    border-left-color: #e74c3c;
+    color: #922b21;
+}
+
+.alert-info {
+    background: #e8f4fd;
+    border-left-color: #3498db;
+    color: #1b4f72;
+}
+
+.loading {
+    padding: 15px;
+    background: #ecf0f1;
+    text-align: center;
+    border-radius: 5px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.loading-active {
+    background: #f39c12;
+    color: white;
+}
+
+.loading-active::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #ffffff;
+    border-top: 3px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Футер */
+.footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+.footer-text {
+    opacity: 0.9;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .title-large {
+        font-size: 2rem;
+    }
+    
+    .section {
+        padding: 20px;
+    }
+    
+    .states-demo {
+        gap: 10px;
+    }
+    
+    .card-section {
+        grid-template-columns: 1fr;
+    }
+}

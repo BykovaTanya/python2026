@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: CSS Классы и Селекторы</title>
+    <link rel="stylesheet" href="css-classes-demo.css">
+</head>
+<body>
+    <!-- Базовые классы -->
+    <div class="container">
+        <header class="header header-main">
+            <h1 class="title title-large">CSS Классы Демонстрация</h1>
+            <p class="subtitle">Различные типы классов и их применение</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Одиночные классы -->
+            <section class="section">
+                <h2 class="heading">Одиночные классы</h2>
+                <p class="text">Параграф с классом .text</p>
+                <div class="box">Блок с классом .box</div>
+                <button class="btn">Кнопка с классом .btn</button>
+            </section>
+
+            <!-- Множественные классы -->
+            <section class="section section-dark">
+                <h2 class="heading heading-center">Множественные классы</h2>
+                <p class="text text-large">Параграф с классами .text и .text-large</p>
+                <div class="box box-primary box-shadow">Блок с тремя классами</div>
+                <button class="btn btn-large btn-success">Большая зеленая кнопка</button>
+            </section>
+
+            <!-- Вложенные классы и BEM -->
+            <section class="card-section">
+                <h2 class="card-section__title">BEM методология</h2>
+                
+                <div class="card">
+                    <div class="card__header">
+                        <h3 class="card__title">Карточка 1</h3>
+                        <span class="card__badge card__badge--new">Новое</span>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__text">Это пример BEM методологии.</p>
+                    </div>
+                    <div class="card__footer">
+                        <button class="card__btn card__btn--primary">Действие</button>
+                    </div>
+                </div>
+
+                <div class="card card--featured">
+                    <div class="card__header">
+                        <h3 class="card__title">Особая карточка</h3>
+                        <span class="card__badge card__badge--featured">Избранное</span>
+                    </div>
+                    <div class="card__body">
+                        <p class="card__text">Модификатор card--featured изменяет стиль.</p>
+                    </div>
+                    <div class="card__footer">
+                        <button class="card__btn card__btn--secondary">Другое действие</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Комбинированные селекторы -->
+            <section class="combo-section">
+                <h2 class="combo-section__heading">Комбинированные селекторы</h2>
+                
+                <!-- Потомок (пробел) -->
+                <div class="parent">
+                    <p class="child">Потомок .parent .child</p>
+                    <div>
+                        <p class="child">Вложенный потомок</p>
+                    </div>
+                </div>
+
+                <!-- Дочерний элемент (>) -->
+                <div class="parent-direct">
+                    <p class="child-direct">Прямой потомок .parent-direct > .child-direct</p>
+                    <div>
+                        <p class="child-direct">Не прямой потомок (не применится)</p>
+                    </div>
+                </div>
+
+                <!-- Соседний элемент (+) -->
+                <div class="sibling-first">Первый элемент</div>
+                <p class="sibling-second">Сосед .sibling-first + .sibling-second</p>
+
+                <!-- Все последующие элементы (~) -->
+                <div class="general-sibling">Общий сосед</div>
+                <p class="following">Следующий элемент .general-sibling ~ .following</p>
+                <p class="following">Еще один следующий элемент</p>
+            </section>
+
+            <!-- Псевдоклассы и псевдоэлементы -->
+            <section class="pseudo-section">
+                <h2 class="pseudo-section__title">Псевдоклассы и псевдоэлементы</h2>
+                
+                <div class="states-demo">
+                    <button class="btn-state">Наведи и нажми (:hover, :active)</button>
+                    <a href="#" class="link-state">Ссылка с состояниями (:link, :visited)</a>
+                    <input type="text" class="input-state" placeholder="Поля ввода (:focus)">
+                </div>
+
+                <div class="pseudo-elements">
+                    <p class="quote">Цитата с псевдоэлементами ::before и ::after</p>
+                    <p class="first-letter">Первый буква увеличена ::first-letter</p>
+                    <p class="first-line">Первая строка этого параграфа будет окрашена в другой цвет ::first-line</p>
+                </div>
+            </section>
+
+            <!-- Утилитарные классы -->
+            <section class="utilities-section">
+                <h2 class="utilities-section__heading">Утилитарные классы</h2>
+                
+                <div class="text-center">Текст по центру</div>
+                <div class="text-right">Текст справа</div>
+                <div class="text-bold">Жирный текст</div>
+                <div class="text-italic">Курсивный текст</div>
+                <div class="bg-primary">Фон основного цвета</div>
+                <div class="bg-secondary">Фон вторичного цвета</div>
+                <div class="padding-large">Большой отступ</div>
+                <div class="margin-small">Маленький внешний отступ</div>
+                <div class="border-radius">Скругленные углы</div>
+            </section>
+
+            <!-- Классы для состояний -->
+            <section class="state-section">
+                <h2 class="state-section__title">Классы для состояний</h2>
+                
+                <div class="alert alert-success">Успешное сообщение</div>
+                <div class="alert alert-warning">Предупреждение</div>
+                <div class="alert alert-error">Ошибка</div>
+                <div class="alert alert-info">Информация</div>
+                
+                <div class="loading">Загрузка...</div>
+                <div class="loading loading-active">Активная загрузка</div>
+                
+                <div class="disabled">Отключенный элемент</div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">&copy; 2024 Демонстрация CSS классов</p>
+        </footer>
+    </div>
+</body>
+</html>
